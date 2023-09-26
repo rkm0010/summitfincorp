@@ -16,6 +16,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>{!data ? "Loading..." : data}</p>
+        <p>This is a of front end hotloading</p>
       </header>
     </div>
   );

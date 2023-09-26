@@ -15,7 +15,7 @@ services:
       - '3000:3000'
     volumes:
       - ./client:/app
-      - ./app:/node_modules
+      - ./node_modules
     links:
       - api
     command: npm start
