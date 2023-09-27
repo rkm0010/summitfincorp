@@ -1,25 +1,27 @@
 import React from "react"
-import logo from './logo.svg';
 import './App.css';
+import Home from './Home'
+import ReactDemo from './ReactDemo'
+import DataDisplay from './DataDisplay'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+
 
 function App() {
-  const [data, setData] = React.useState(null);
-
-  React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-        <p>This is a of front end hotloading</p>
-      </header>
+   <div className="App" >
+    <Router>
+      <Routes>
+        <Route exact path="/" element ={<Home/>}/>
+        <Route exact path="/DataDisplay" element ={<DataDisplay/>}/>
+        <Route exact path="/reactdemo" element ={<ReactDemo/>}/>
+      </Routes>
+    </Router>
+
     </div>
   );
 }
 
+
 export default App;
+
+
